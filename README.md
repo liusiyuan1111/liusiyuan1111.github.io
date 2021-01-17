@@ -1,6 +1,6 @@
 # Welcome to My Blog
 
-This is a <u>blog[(liusiyuan.site)](https://liusiyuan.site/)</u> built by github page+hexo 
+This is a blog[(liusiyuan.site)](https://liusiyuan.site/)built by github page+hexo 
 
 **Liu SiYuan**
 
