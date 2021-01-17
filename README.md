@@ -2,15 +2,15 @@
 
 This is a blog[(liusiyuan.site)](https://liusiyuan.site/)built by github page+hexo 
 
-**Liu SiYuan**
+## Liu SiYuan
 
 Email: liusiyuan1111@gmail.com
 
-------
 
 
 
-**Work Experience:**
+
+## Work Experience:
 
 2020.7-present         Lecturer in GuangDong Polytechnic of Industry and Commerce
 
