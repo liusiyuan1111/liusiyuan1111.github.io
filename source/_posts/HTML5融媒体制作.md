@@ -72,3 +72,60 @@ tags:
 12. 注意，把仓库clone到本地之后，只在自己创建的文件夹内操作，不要随意删除其他的内容
 
 13. 大家先按照这个流程练习一次，自己创建文件夹和空白文档。参赛同学必须完成，其他同学随意。
+
+## 与源仓库同步
+
+现在大家都已经在仓库里创建了自己的文件夹，但是大家fork的时间不同，clone的仓库也是不同时间点的仓库，如何保持自己的仓库和源仓库保持一致呢。在这里给大家介绍一种比较简单的，无需命令行的教程，方便大家操作。
+
+简单来说与源仓库保持同步就是反向的pull request，通过对比你现在的仓库和源仓库来实现更新与同步。
+
+操作步骤如下
+
+1. 在Branch里选择`create pull request`![image-20210118192712571](https://i.loli.net/2021/01/18/HjrXZI7ABGDbuPL.png)
+
+2. 会跳到网页版，查看交叉对比你的仓库和源仓库发生的变化。在这里调换顺序，左边选择你的仓库，右边选择源仓库
+
+   ![image-20210118192845940](https://i.loli.net/2021/01/18/8WecKGuQxOjZdvM.png)
+
+3. 更换顺序之后，就会出现上次fork之后，源仓库发生的所有变化，在这里点击`create pull request`
+
+   ![image-20210118193025291](https://i.loli.net/2021/01/18/g6ex42kmAWh38qD.png)
+
+4. 填写必要的信息，然后继续`create pull request`![image-20210118193142529](C:/Users/lsy/AppData/Roaming/Typora/typora-user-images/image-20210118193142529.png)
+
+5. 在新的页面，`merge pull request`合并这些发生更改的请求即可![image-20210118193316198](https://i.loli.net/2021/01/18/7IqOPrtiJ641CNE.png)
+
+6. `confirm merge` 确认合并
+
+   ![image-20210118193356274](https://i.loli.net/2021/01/18/k8Jdqz7bTMBDvio.png)
+
+7. 此时你的仓库里就有了上次fork以后，源仓库更新的内容
+
+8. 回到GitHub桌面版，`fetch origin` 更新
+
+   ![image-20210118193458922](https://i.loli.net/2021/01/18/TQPBE1pfS3OjW27.png)
+
+9. 可以看到相比之前有了17个commit的改变，pull origin 下载这些请求即可
+
+   ![image-20210118193647902](https://i.loli.net/2021/01/18/Ma34Q7bjLzOTkWh.png)
+
+10. 之后每次更新就不用这么麻烦了，只要在Branch里选择 `merge into current branch`
+
+    ![image-20210118194043521](https://i.loli.net/2021/01/18/wA4m8kRM3jgU2VW.png)
+
+11. 选择下面这个分支，然后merge合并
+
+    ![image-20210118194150229](https://i.loli.net/2021/01/18/E1G5kJYxLQt2jlR.png)
+
+12. 最后push更新到你的仓库即完成了更新
+
+    ![image-20210118194255291](https://i.loli.net/2021/01/18/5NTspa7dF3eQYnB.png)
+
+13. 第一次更新需要完成1-9步。之后的每次更新只要完成10-12步即可。
+
+14. 除了上述使用GitHub反向pull request来完成与源仓库的同步更新以外，还可以通过git来实现，这里就不详细介绍了，有兴趣了解git的同学可以去学习一下，可以参考以下教程：
+
+    [fork分支与源分支同步代码_lewis-CSDN博客](https://lewis.blog.csdn.net/article/details/64440602?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)
+
+    [github使用 - 简书 (jianshu.com)](https://www.jianshu.com/p/79454cf00945)
+
