@@ -5,6 +5,8 @@ tags:
 - 论文翻译
 - 图像检索
 - 深度学习
+- Paper
+- CV
 ---
 
 # Deep Image Retrieval: A Survey
