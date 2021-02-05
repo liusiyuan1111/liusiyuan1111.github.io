@@ -1,5 +1,5 @@
 ---
-title: 论文翻译：Deep Image Retrieval: A Survey
+title: 论文翻译：Deep Image Retrieval  A Survey
 date: 2021-02-05 19:53:38
 tags:
 - 论文翻译
