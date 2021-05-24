@@ -21,6 +21,7 @@ tags:
 3. TransFuse：[TransFuse: Fusing Transformers and CNNs for Medical Image Segmentation](https://arxiv.org/abs/2102.08005)
 4. Swin-Unet：[Swin-Unet: Unet-like Pure Transformer for Medical Image Segmentation](https://arxiv.org/abs/2105.05537)
 5. MedT：[Medical Transformer: Gated Axial-Attention for Medical Image Segmentation](https://arxiv.org/abs/2102.10662)
+6. SegTran：[Medical Image Segmentation using Squeeze-and-Expansion Transformers](https://arxiv.org/pdf/2105.09511v1)
 
 ## 一、SETR|CVPR2021|复旦等提出SETR语义分割网络
 
@@ -78,3 +79,16 @@ tags:
 
 源码：https://github.com/jeya-maria-jose/Medical-Transformer
 
+
+
+## 六、SegTran
+
+
+
+### 论文信息
+
+作者：Shaohua Li et al.（电子科技大学）
+
+文章：https://arxiv.org/pdf/2105.09511v1
+
+源码：https://github.com/askerlee/segtran
