@@ -6,21 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="人生苦短，我学Python">
+    <meta name="description" content="Anaconda安装Anaconda是跨平台的python管理平台，win、mac、linux上通用，可以便捷获取包且对包能够进行管理，同时对环境可以统一管理的发行版本。Anaconda包含了conda、Python在内的超过180个科学包及其依赖项。 可以在官网找到自己电脑对应的安装包Anaconda | 下载 也可以在优慕课-课程资源里找到Anaconda3的安装包（适用于win64位系统）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据分析与处理开发环境搭建">
 <meta property="og:url" content="http://example.com/2021/09/24/10-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%A4%84%E7%90%86%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="刘思远的博客">
-<meta property="og:description" content="人生苦短，我学Python">
+<meta property="og:description" content="Anaconda安装Anaconda是跨平台的python管理平台，win、mac、linux上通用，可以便捷获取包且对包能够进行管理，同时对环境可以统一管理的发行版本。Anaconda包含了conda、Python在内的超过180个科学包及其依赖项。 可以在官网找到自己电脑对应的安装包Anaconda | 下载 也可以在优慕课-课程资源里找到Anaconda3的安装包（适用于win64位系统）">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/lbczh26IZSGwnkP.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/OYklXh5HwVnGDRU.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/ZcOoNXRdTkSx6GV.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/jEDXug5yUKbLfPa.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/ioGxLs1vByzAp5D.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/yCKpuqAlS2OhnMN.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/DeAxJymTzl4QVpL.png">
 <meta property="article:published_time" content="2021-09-24T02:29:53.000Z">
-<meta property="article:modified_time" content="2021-09-24T02:34:47.104Z">
+<meta property="article:modified_time" content="2021-09-24T03:25:26.545Z">
 <meta property="article:author" content="Liu">
 <meta property="article:tag" content="数据分析">
-<meta property="article:tag" content="python">
 <meta property="article:tag" content="数据处理">
 <meta property="article:tag" content="Anaconda">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/24/lbczh26IZSGwnkP.png">
     
     
         
@@ -113,7 +121,7 @@
 
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">Anaconda安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">Anaconda配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E4%B9%8B%E5%90%8E%E6%89%93%E5%BC%80Anaconda%E7%BB%88%E7%AB%AF%EF%BC%88macOS%E5%92%8CLinux%E8%AF%B7%E6%89%93%E5%BC%80Terminal%E7%BB%88%E7%AB%AF%E8%BF%9B%E8%A1%8C%E6%93%8D%E4%BD%9C%EF%BC%89"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.安装完成之后打开Anaconda终端（macOS和Linux请打开Terminal终端进行操作）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.创建新环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%BF%9B%E5%85%A5-%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">2.0.3.</span> <span class="toc-text">3.进入&#x2F;切换环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-Linux-%E6%88%96-macOS"><span class="toc-number">2.1.</span> <span class="toc-text">① Linux 或 macOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-Windows"><span class="toc-number">2.2.</span> <span class="toc-text">② Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E9%80%80%E5%87%BA%E7%8E%AF%E5%A2%83"><span class="toc-number">2.2.1.</span> <span class="toc-text">4.退出环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-Linux-%E6%88%96-macOS-1"><span class="toc-number">2.3.</span> <span class="toc-text">① Linux 或 macOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-Windows-1"><span class="toc-number">2.4.</span> <span class="toc-text">② Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%98%BE%E7%A4%BA%E5%B7%B2%E5%88%9B%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="toc-number">2.4.1.</span> <span class="toc-text">5.显示已创建环境</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -141,7 +149,7 @@
       
         <time datetime="2021-09-24T02:29:53.000Z" itemprop="datePublished">2021-09-24</time>
         
-        (Updated: <time datetime="2021-09-24T02:34:47.104Z" itemprop="dateModified">2021-09-24</time>)
+        (Updated: <time datetime="2021-09-24T03:25:26.545Z" itemprop="dateModified">2021-09-24</time>)
         
       
     </div>
@@ -152,7 +160,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Anaconda/" rel="tag">Anaconda</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-link-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag">数据分析</a>, <a class="tag-link-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="tag">数据处理</a>
+        <a class="tag-link-link" href="/tags/Anaconda/" rel="tag">Anaconda</a>, <a class="tag-link-link" href="/tags/Python/" rel="tag">Python</a>, <a class="tag-link-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag">数据分析</a>, <a class="tag-link-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="tag">数据处理</a>
     </div>
 
 
@@ -163,7 +171,45 @@
   
 
   <div class="content" itemprop="articleBody">
-    
+    <h2 id="Anaconda安装"><a href="#Anaconda安装" class="headerlink" title="Anaconda安装"></a>Anaconda安装</h2><p>Anaconda是跨平台的python管理平台，win、mac、linux上通用，可以便捷获取包且对包能够进行管理，同时对环境可以统一管理的发行版本。Anaconda包含了conda、Python在内的超过180个科学包及其依赖项。</p>
+<p>可以在官网找到自己电脑对应的安装包<a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual#Downloads">Anaconda | 下载</a></p>
+<p>也可以在优慕课-课程资源里找到Anaconda3的安装包（适用于win64位系统）</p>
+<p>安装注意事项：</p>
+<p>1.安装路径不要有中文，由于占用空间会比较大，建议安装在其他盘</p>
+<p><img src="https://i.loli.net/2021/09/24/lbczh26IZSGwnkP.png" alt="image-20210924104944416"></p>
+<p>2.把”Add Anaconda3 to my PATH environment variable”勾选上</p>
+<p><img src="https://i.loli.net/2021/09/24/OYklXh5HwVnGDRU.png" alt="image-20210924105204055"></p>
+<h2 id="Anaconda配置"><a href="#Anaconda配置" class="headerlink" title="Anaconda配置"></a>Anaconda配置</h2><h4 id="1-安装完成之后打开Anaconda终端（macOS和Linux请打开Terminal终端进行操作）"><a href="#1-安装完成之后打开Anaconda终端（macOS和Linux请打开Terminal终端进行操作）" class="headerlink" title="1.安装完成之后打开Anaconda终端（macOS和Linux请打开Terminal终端进行操作）"></a>1.安装完成之后打开Anaconda终端（macOS和Linux请打开Terminal终端进行操作）</h4><p><img src="https://i.loli.net/2021/09/24/ZcOoNXRdTkSx6GV.png" alt="image-20210924105901282"></p>
+<h4 id="2-创建新环境"><a href="#2-创建新环境" class="headerlink" title="2.创建新环境"></a>2.创建新环境</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">`conda create --n <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>env_name</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package_names</span><span class="token punctuation">></span></span>`<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>注意：</p>
+<p><code>&lt;env_name&gt;</code>即创建的环境名，建议以英文命名，且不加空格，名称两边不加尖括号“&lt;&gt;”</p>
+<p><code>&lt;package_names&gt;</code>即安装在环境中的包名。名称两边不加尖括号“&lt;&gt;”。</p>
+<ol>
+<li>如果要安装指定的版本号，则只需要在包名后面以<code>=</code>和版本号的形式执行。如：<code>conda create --n lsy python=3.8</code>，即创建一个名为“lsy”的环境，环境中安装版本为3.8的python。</li>
+<li>如果要在新创建的环境中创建多个包，则直接在<code>&lt;package_names&gt;</code>后以<strong>空格</strong>隔开，添加多个包名即可。如：<code>conda create -n python3 python=3.8 numpy pandas</code>，即创建一个名为“python3”的环境，环境中安装版本为3.8的python，同时也安装了numpy和pandas。</li>
+<li>如果创建环境时没有指定Python版本，那么将会安装与Anaconda版本相同的Python版本（我这里上传的Anaconda对应的Python版本为3.8）。</li>
+</ol>
+<p><img src="https://i.loli.net/2021/09/24/jEDXug5yUKbLfPa.png" alt="image-20210924110617857"></p>
+<h4 id="3-进入-切换环境"><a href="#3-进入-切换环境" class="headerlink" title="3.进入/切换环境"></a>3.进入/切换环境</h4><p>可以通过上述方式创建多个python环境，创建好环境后，可以通过以下语句进入环境</p>
+<h3 id="①-Linux-或-macOS"><a href="#①-Linux-或-macOS" class="headerlink" title="① Linux 或 macOS"></a>① Linux 或 macOS</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> activate <span class="token operator">&lt;</span>env_name<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="②-Windows"><a href="#②-Windows" class="headerlink" title="② Windows"></a>② Windows</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">activate <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>env_name</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>比如我这里通过<code>activate lsy</code>进入了我刚刚创建的环境，进入成功后，前面的括号里会显示此时的环境名</p>
+<p><img src="https://i.loli.net/2021/09/24/ioGxLs1vByzAp5D.png" alt="image-20210924111825652"></p>
+<h4 id="4-退出环境"><a href="#4-退出环境" class="headerlink" title="4.退出环境"></a>4.退出环境</h4><h3 id="①-Linux-或-macOS-1"><a href="#①-Linux-或-macOS-1" class="headerlink" title="① Linux 或 macOS"></a>① Linux 或 macOS</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="②-Windows-1"><a href="#②-Windows-1" class="headerlink" title="② Windows"></a>② Windows</h3><pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">conda deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>退出环境后将回到root环境中，括号里显示环境名为(base)</p>
+<p><img src="https://i.loli.net/2021/09/24/yCKpuqAlS2OhnMN.png" alt="image-20210924112129803"></p>
+<h4 id="5-显示已创建环境"><a href="#5-显示已创建环境" class="headerlink" title="5.显示已创建环境"></a>5.显示已创建环境</h4><pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">conda info --envs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或</p>
+<pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">conda info -e<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">conda env list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>例如：</li>
+</ul>
+<p><img src="https://i.loli.net/2021/09/24/DeAxJymTzl4QVpL.png" alt="image-20210924112459262"></p>
+<p>结果中星号“*”所在行即为当前所在环境</p>
+
   </div>
 
 </article>
@@ -200,7 +246,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">Anaconda安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">Anaconda配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E4%B9%8B%E5%90%8E%E6%89%93%E5%BC%80Anaconda%E7%BB%88%E7%AB%AF%EF%BC%88macOS%E5%92%8CLinux%E8%AF%B7%E6%89%93%E5%BC%80Terminal%E7%BB%88%E7%AB%AF%E8%BF%9B%E8%A1%8C%E6%93%8D%E4%BD%9C%EF%BC%89"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.安装完成之后打开Anaconda终端（macOS和Linux请打开Terminal终端进行操作）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.创建新环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%BF%9B%E5%85%A5-%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">2.0.3.</span> <span class="toc-text">3.进入&#x2F;切换环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-Linux-%E6%88%96-macOS"><span class="toc-number">2.1.</span> <span class="toc-text">① Linux 或 macOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-Windows"><span class="toc-number">2.2.</span> <span class="toc-text">② Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E9%80%80%E5%87%BA%E7%8E%AF%E5%A2%83"><span class="toc-number">2.2.1.</span> <span class="toc-text">4.退出环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-Linux-%E6%88%96-macOS-1"><span class="toc-number">2.3.</span> <span class="toc-text">① Linux 或 macOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-Windows-1"><span class="toc-number">2.4.</span> <span class="toc-text">② Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%98%BE%E7%A4%BA%E5%B7%B2%E5%88%9B%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="toc-number">2.4.1.</span> <span class="toc-text">5.显示已创建环境</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
