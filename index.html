@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -205,7 +205,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -229,6 +229,7 @@
 <h2 id="Anaconda配置"><a href="#Anaconda配置" class="headerlink" title="Anaconda配置"></a>Anaconda配置</h2><h4 id="1-运行"><a href="#1-运行" class="headerlink" title="1.运行"></a>1.运行</h4><p>安装完成之后打开Anaconda终端（macOS和Linux请打开Terminal终端进行操作）</p>
 <p><img src="https://i.loli.net/2021/09/24/ZcOoNXRdTkSx6GV.png" alt="image-20210924105901282"></p>
 <h4 id="2-创建新环境"><a href="#2-创建新环境" class="headerlink" title="2.创建新环境"></a>2.创建新环境</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">conda create -n <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>env_name</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package_names</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>注意：</p>
 <p><code>&lt;env_name&gt;</code>即创建的环境名，建议以英文命名，且不加空格，名称两边不加尖括号“&lt;&gt;”</p>
 <p><code>&lt;package_names&gt;</code>即安装在环境中的包名。名称两边不加尖括号“&lt;&gt;”。</p>
@@ -240,19 +241,26 @@
 <p><img src="https://i.loli.net/2021/09/24/jEDXug5yUKbLfPa.png" alt="image-20210924110617857"></p>
 <h4 id="3-进入-切换环境"><a href="#3-进入-切换环境" class="headerlink" title="3.进入/切换环境"></a>3.进入/切换环境</h4><p>可以通过上述方式创建多个python环境，创建好环境后，可以通过以下语句进入环境</p>
 <h5 id="（1）Linux-或-macOS"><a href="#（1）Linux-或-macOS" class="headerlink" title="（1）Linux 或 macOS"></a>（1）Linux 或 macOS</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> activate <span class="token operator">&lt;</span>env_name<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>（2）Windows</p>
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">activate <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>env_name</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>比如我这里通过<code>activate lsy</code>进入了我刚刚创建的环境，进入成功后，前面的括号里会显示此时的环境名</p>
 <p><img src="https://i.loli.net/2021/09/24/ioGxLs1vByzAp5D.png" alt="image-20210924111825652"></p>
 <h4 id="4-退出环境"><a href="#4-退出环境" class="headerlink" title="4.退出环境"></a>4.退出环境</h4><h5 id="（1）Linux-或-macOS-1"><a href="#（1）Linux-或-macOS-1" class="headerlink" title="（1）Linux 或 macOS"></a>（1）Linux 或 macOS</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h5 id="（2）-Windows"><a href="#（2）-Windows" class="headerlink" title="（2） Windows"></a>（2） Windows</h5><pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">conda deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>退出环境后将回到root环境中，括号里显示环境名为(base)</p>
 <p><img src="https://i.loli.net/2021/09/24/yCKpuqAlS2OhnMN.png" alt="image-20210924112129803"></p>
 <h4 id="5-显示已创建环境"><a href="#5-显示已创建环境" class="headerlink" title="5.显示已创建环境"></a>5.显示已创建环境</h4><pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">conda info --envs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>或</p>
 <pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">conda info -e<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>或</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">conda env list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <ul>
 <li>例如：</li>
 </ul>
@@ -260,6 +268,7 @@
 <p>结果中星号“*”所在行即为当前所在环境</p>
 <h4 id="5-安装包"><a href="#5-安装包" class="headerlink" title="5.安装包"></a>5.安装包</h4><h5 id="（1）使用conda安装包"><a href="#（1）使用conda安装包" class="headerlink" title="（1）使用conda安装包"></a>（1）使用conda安装包</h5><p>在当前环境中安装包，切换到指定环境，再运行以下指令</p>
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">conda install <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package_name</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
 <li><code>&lt;package_name&gt;</code>即要安装的包名。包名两边不加尖括号“&lt;&gt;”。</li>
 <li>执行命令后在当前环境中安装包。</li>
@@ -267,6 +276,7 @@
 </ul>
 <h5 id="（2）使用pip安装包"><a href="#（2）使用pip安装包" class="headerlink" title="（2）使用pip安装包"></a>（2）使用pip安装包</h5><h5 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h5><p>当使用<code>conda install</code>无法进行安装时，可以使用pip进行安装。</p>
 <h5 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h5><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">pip install <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package_name</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><ul>
 <li><p><package_name>为指定安装包的名称。包名两边不加尖括号“&lt;&gt;”。</p>
 </li>
@@ -361,7 +371,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -457,7 +467,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -480,6 +490,7 @@
     <span class="token property">height</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> aquamarine<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>​        可以看到此时的p元素大小为160px*160px</p>
 <p><img src="https://i.loli.net/2021/05/14/hWPOgrf3nHjlMaw.png" alt="image-20210514123306092"></p>
 <h3 id="三、rem单位的使用"><a href="#三、rem单位的使用" class="headerlink" title="三、rem单位的使用"></a>三、rem单位的使用</h3><p>​        在了解什么是em单位和相对单位后，就很好理解rem单位了，em是相对于当前元素字体大小的单位，而rem是相对于根元素的字体大小的单位，根元素也就是html元素。</p>
@@ -494,6 +505,7 @@
     <span class="token property">height</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> aquamarine<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/05/14/3inN1MWgHhDfAcT.png" alt="image-20210514123618613"></p>
 <h3 id="四、媒体查询"><a href="#四、媒体查询" class="headerlink" title="四、媒体查询"></a>四、媒体查询</h3><p>​        我们已经知道了rem是相对于根元素的字号来说的，那具体怎么适配不同屏幕大小呢？这个时候就要用到媒体查询了，rem一般和媒体查询搭配使用。</p>
 <p>​        媒体查询（Media Query）是CSS3的新语法，使用@media 查询，可以针对不同的媒体类型定义不同的样式，常用于针对不同的设备尺寸设置不同的样式。详细可以浏览mdn：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Media_Queries/Using_media_queries">使用媒体查询 - CSS（层叠样式表） | MDN (mozilla.org)</a></p>
@@ -523,6 +535,7 @@
     <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> aquamarine<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>​        此时浏览器页面宽度为861px，当设备宽度大于等于640px时，元素高度应该是50px * 10rem=500px  元素内字体应该是50p * 1rem=50px</p>
 <p><img src="https://i.loli.net/2021/05/14/uHTYnCVc3iSfgqy.png" alt="image-20210514133257112"></p>
 <p>​        此时浏览器页面宽度为1385px，当设备宽度大于等于1260px时，元素高度应该是100px * 10rem=1000px  元素内字体应该是100p * 1rem=100px </p>
@@ -589,7 +602,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -687,7 +700,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -783,7 +796,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -824,6 +837,7 @@ db.json
 node_modules/
 public/
 .deploy*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意2：theme主题文件夹中的.git文件夹也要删掉，所以需要显示隐藏文件，检查一下有没有，否则上传的时候会出错</p>
 </li>
 <li><p>提交commit，然后push，打开GitHub看一下是否已经正确上传，此时hexo分支下是这些源文件了。</p>
@@ -841,12 +855,15 @@ public/
 </li>
 <li><p>进入到clone的文件夹中，执行</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">npm install
-npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 <li><p>然后生成，部署</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">hexo g
-hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 <li><p>然后就可以写博客了</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo new newpage<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
 
 </li>
@@ -911,7 +928,7 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -1073,7 +1090,7 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -1101,15 +1118,20 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <p><img src="https://i.loli.net/2021/01/12/PfzQ2ywYx8Spc1j.png" alt="image-20210112164554951"></p>
 <p>然后执行安装MySQL的服务：</p>
 <pre class="line-numbers language-none"><code class="language-none">mysqld --install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>出现Service successfully installed的提示，表示安装成功</p>
 <h3 id="初始化MySQL"><a href="#初始化MySQL" class="headerlink" title="初始化MySQL"></a>初始化MySQL</h3><p>使用以下代码初始化MySQL，然后会产生一个随机密码，记住这个密码，以后会遇到</p>
 <pre class="line-numbers language-none"><code class="language-none">mysqld --initialize --console<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/01/12/X6lL1VGJaKWygcD.jpg" alt="微信图片编辑_20210112165801"></p>
 <h3 id="开启MySQL的服务"><a href="#开启MySQL的服务" class="headerlink" title="开启MySQL的服务"></a>开启MySQL的服务</h3><pre class="line-numbers language-none"><code class="language-none">net start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/01/12/cxd4WsnElwmGB9F.png" alt="image-20210112165929472"></p>
 <h3 id="登录验证"><a href="#登录验证" class="headerlink" title="登录验证"></a>登录验证</h3><pre class="line-numbers language-none"><code class="language-none">mysql -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/01/12/r4wmMBPFKc5oTbX.png" alt="image-20210112170159522"></p>
 <h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><pre class="line-numbers language-none"><code class="language-none">alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;你的密码&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/01/12/coGptdW3NlxXMzu.png" alt="image-20210112170435900"></p>
 <h3 id="再次登录验证密码"><a href="#再次登录验证密码" class="headerlink" title="再次登录验证密码"></a>再次登录验证密码</h3><p><img src="https://i.loli.net/2021/01/12/jqUc7yrXBzZTH9P.png" alt="image-20210112170713439"></p>
 <h2 id="设置系统变量"><a href="#设置系统变量" class="headerlink" title="设置系统变量"></a>设置系统变量</h2><p>为了方便登录操作mysql，需要设置一个全局变量。</p>
@@ -1176,7 +1198,7 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -1200,9 +1222,11 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <p>Node.js 安装包及源码下载地址为：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
 <p>有了nodejs的环境后，就可以安装hexo</p>
 <pre class="line-numbers language-none"><code class="language-none">npm install -g hexo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h3 id="Hexo初始化"><a href="#Hexo初始化" class="headerlink" title="Hexo初始化"></a>Hexo初始化</h3><p>在想要的路径下新建一个文件夹，比如我的是D:\hexo ，这个文件夹内就是你的Hexo博客的源文件，在这个文件夹下右键单击鼠标，点击 Git Bash Here，依次输入以下 npm 命令即可初始化。</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo init
 npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>输入以上命令后，hexo 会自动下载一些文件到这个目录，包括 <code>node_modules</code>，其中比较重要的几个文件的目录结构如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">.
 ├── _config.yml
@@ -1212,10 +1236,12 @@ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 |   ├── _drafts
 |   └── _posts
 └── themes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意：hexo 有 2 个<code>_config.yml</code> 文件，一个是站点根目录下的<code>_config.yml</code>，一个是 theme（主题）下的<code>_config.yml</code> 文件。</p>
 <p>博客生成、预览：</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo g # 生成
 hexo s # 启动服务<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>执行以上命令之后，hexo 就会在 public 文件夹生成相关 html 文件，这些就是你博客的静态文件，后续需要把这些提交到 GitHub 上。</p>
 <p><code>hexo s</code> 是开启本地预览服务，打开浏览器访问 <code>http://localhost:4000</code> 即可看到内容，很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故。</p>
 <p><img src="https://i.loli.net/2021/01/11/di1oyQeEmbC5gRA.png" alt="image-20210111215225751"></p>
@@ -1231,18 +1257,22 @@ hexo s # 启动服务<span aria-hidden="true" class="line-numbers-rows"><span></
 <h2 id="链接Github与本地"><a href="#链接Github与本地" class="headerlink" title="链接Github与本地"></a>链接Github与本地</h2><h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><p>右键单击鼠标，点击 Git Bash Here输入以下命令：</p>
 <pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;Name&quot;
 git config --global user.email &quot;Email&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><strong>Name和Email是我们注册Github时的用户名和邮箱。</strong></p>
 <p>然后生成密钥：</p>
 <pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C &quot;Email&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><strong>Email是我们注册Github时的邮箱</strong></p>
 <p>然后会出现：</p>
 <pre class="line-numbers language-none"><code class="language-none">Generating public&#x2F;private rsa key pair.
 Enter file in which to save the key (&#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa):
 &#x2F;&#x2F;到这里可以直接回车将密钥按默认文件进行存储<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>回车之后：</p>
 <pre class="line-numbers language-none"><code class="language-none">Enter passphrase (empty for no passphrase):
 &#x2F;&#x2F;这里是要你输入密码，其实不需要输什么密码，直接回车就行
 Enter same passphrase again:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>接下来会有：</p>
 <pre class="line-numbers language-none"><code class="language-none">Your identification has been saved in &#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa.
 Your public key has been saved in &#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa.pub.
@@ -1250,8 +1280,10 @@ The key fingerprint is:
 这里是各种字母数字组成的字符串，结尾是你的邮箱
 The key&#39;s randomart image is:
 这里也是各种字母数字符号组成的字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>现在密钥已经生成，一般存放在（/c/Users/you/.ssh/id_rsa.pub.），我们运行下面的命令将密钥复制为粘贴板：</p>
 <pre class="line-numbers language-none"><code class="language-none">clip &lt; ~&#x2F;.ssh&#x2F;id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/01/11/FGz8qAbODEsSfti.png" alt="image-20210111212538215"></p>
 <h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><p>在Github头像下面点击Settings，再点击SSH and GPG keys，新建一个SSH，名字任意。</p>
 <p>然后将刚才复制的密钥添加就可以了，像这样：</p>
@@ -1260,6 +1292,7 @@ The key&#39;s randomart image is:
 <p>右键单击鼠标，点击 Git Bash Here输入以下命令，如果如下图所示，出现你的用户名，那就成功了</p>
 <pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com
 &#x2F;&#x2F;注意不要做任何修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/01/11/JYnibqIWA3ed2kx.png" alt="image-20210111212935613"></p>
 <p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，我们需要修改一下才能连接Github。</p>
 <p><img src="https://i.loli.net/2021/01/11/Z8PokJyKAX6v9lB.png" alt="image-20210111213124756"></p>
@@ -1271,6 +1304,7 @@ The key&#39;s randomart image is:
 deploy:
 
  type: &#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>改为：</p>
 <pre class="line-numbers language-none"><code class="language-none"># Deployment
 
@@ -1285,6 +1319,7 @@ deploy:
  branch: master
 
  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意：</p>
 <ul>
 <li><strong>repository修改为你自己的github项目地址</strong>。</li>
@@ -1292,8 +1327,10 @@ deploy:
 </ul>
 <p>直接部署一般会报如下错误：</p>
 <pre class="line-numbers language-none"><code class="language-none">Deployer not found: git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>这是因为缺少了一个插件，我们可以通过如下命令安装：</p>
 <pre class="line-numbers language-none"><code class="language-none">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>然后输入 <code>hexo d</code> 就会将本次有改动的代码全部提交。</p>
 <h2 id="写文章、发布文章"><a href="#写文章、发布文章" class="headerlink" title="写文章、发布文章"></a>写文章、发布文章</h2><p>打开hexo安装目录，我的是D:\Blog\source_posts ，可以发现里面有一个<code>hello-world.md</code>的文件，可以把自己写的md文件直接放进来</p>
 <p><img src="https://i.loli.net/2021/01/11/rgTiDvU6xfYMEqz.png" alt="image-20210111220734944"></p>
@@ -1355,7 +1392,7 @@ deploy:
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   

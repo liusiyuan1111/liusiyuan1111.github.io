@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/01/11/Z8PokJyKAX6v9lB.png">
 <meta property="og:image" content="https://i.loli.net/2021/01/11/rgTiDvU6xfYMEqz.png">
 <meta property="article:published_time" content="2021-01-11T15:59:53.000Z">
-<meta property="article:modified_time" content="2021-10-11T05:19:20.580Z">
+<meta property="article:modified_time" content="2021-10-11T05:32:24.284Z">
 <meta property="article:author" content="Liu">
 <meta property="article:tag" content="搭建博客">
 <meta property="article:tag" content="Hexo">
@@ -220,7 +220,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -244,9 +244,11 @@
 <p>Node.js 安装包及源码下载地址为：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
 <p>有了nodejs的环境后，就可以安装hexo</p>
 <pre class="line-numbers language-none"><code class="language-none">npm install -g hexo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h3 id="Hexo初始化"><a href="#Hexo初始化" class="headerlink" title="Hexo初始化"></a>Hexo初始化</h3><p>在想要的路径下新建一个文件夹，比如我的是D:\hexo ，这个文件夹内就是你的Hexo博客的源文件，在这个文件夹下右键单击鼠标，点击 Git Bash Here，依次输入以下 npm 命令即可初始化。</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo init
 npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>输入以上命令后，hexo 会自动下载一些文件到这个目录，包括 <code>node_modules</code>，其中比较重要的几个文件的目录结构如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">.
 ├── _config.yml
@@ -256,10 +258,12 @@ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 |   ├── _drafts
 |   └── _posts
 └── themes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意：hexo 有 2 个<code>_config.yml</code> 文件，一个是站点根目录下的<code>_config.yml</code>，一个是 theme（主题）下的<code>_config.yml</code> 文件。</p>
 <p>博客生成、预览：</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo g # 生成
 hexo s # 启动服务<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>执行以上命令之后，hexo 就会在 public 文件夹生成相关 html 文件，这些就是你博客的静态文件，后续需要把这些提交到 GitHub 上。</p>
 <p><code>hexo s</code> 是开启本地预览服务，打开浏览器访问 <code>http://localhost:4000</code> 即可看到内容，很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故。</p>
 <p><img src="https://i.loli.net/2021/01/11/di1oyQeEmbC5gRA.png" alt="image-20210111215225751"></p>
@@ -275,18 +279,22 @@ hexo s # 启动服务<span aria-hidden="true" class="line-numbers-rows"><span></
 <h2 id="链接Github与本地"><a href="#链接Github与本地" class="headerlink" title="链接Github与本地"></a>链接Github与本地</h2><h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><p>右键单击鼠标，点击 Git Bash Here输入以下命令：</p>
 <pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;Name&quot;
 git config --global user.email &quot;Email&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><strong>Name和Email是我们注册Github时的用户名和邮箱。</strong></p>
 <p>然后生成密钥：</p>
 <pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C &quot;Email&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><strong>Email是我们注册Github时的邮箱</strong></p>
 <p>然后会出现：</p>
 <pre class="line-numbers language-none"><code class="language-none">Generating public&#x2F;private rsa key pair.
 Enter file in which to save the key (&#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa):
 &#x2F;&#x2F;到这里可以直接回车将密钥按默认文件进行存储<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>回车之后：</p>
 <pre class="line-numbers language-none"><code class="language-none">Enter passphrase (empty for no passphrase):
 &#x2F;&#x2F;这里是要你输入密码，其实不需要输什么密码，直接回车就行
 Enter same passphrase again:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>接下来会有：</p>
 <pre class="line-numbers language-none"><code class="language-none">Your identification has been saved in &#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa.
 Your public key has been saved in &#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa.pub.
@@ -294,8 +302,10 @@ The key fingerprint is:
 这里是各种字母数字组成的字符串，结尾是你的邮箱
 The key&#39;s randomart image is:
 这里也是各种字母数字符号组成的字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>现在密钥已经生成，一般存放在（/c/Users/you/.ssh/id_rsa.pub.），我们运行下面的命令将密钥复制为粘贴板：</p>
 <pre class="line-numbers language-none"><code class="language-none">clip &lt; ~&#x2F;.ssh&#x2F;id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/01/11/FGz8qAbODEsSfti.png" alt="image-20210111212538215"></p>
 <h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><p>在Github头像下面点击Settings，再点击SSH and GPG keys，新建一个SSH，名字任意。</p>
 <p>然后将刚才复制的密钥添加就可以了，像这样：</p>
@@ -304,6 +314,7 @@ The key&#39;s randomart image is:
 <p>右键单击鼠标，点击 Git Bash Here输入以下命令，如果如下图所示，出现你的用户名，那就成功了</p>
 <pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com
 &#x2F;&#x2F;注意不要做任何修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/01/11/JYnibqIWA3ed2kx.png" alt="image-20210111212935613"></p>
 <p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，我们需要修改一下才能连接Github。</p>
 <p><img src="https://i.loli.net/2021/01/11/Z8PokJyKAX6v9lB.png" alt="image-20210111213124756"></p>
@@ -315,6 +326,7 @@ The key&#39;s randomart image is:
 deploy:
 
  type: &#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>改为：</p>
 <pre class="line-numbers language-none"><code class="language-none"># Deployment
 
@@ -329,6 +341,7 @@ deploy:
  branch: master
 
  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意：</p>
 <ul>
 <li><strong>repository修改为你自己的github项目地址</strong>。</li>
@@ -336,8 +349,10 @@ deploy:
 </ul>
 <p>直接部署一般会报如下错误：</p>
 <pre class="line-numbers language-none"><code class="language-none">Deployer not found: git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>这是因为缺少了一个插件，我们可以通过如下命令安装：</p>
 <pre class="line-numbers language-none"><code class="language-none">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>然后输入 <code>hexo d</code> 就会将本次有改动的代码全部提交。</p>
 <h2 id="写文章、发布文章"><a href="#写文章、发布文章" class="headerlink" title="写文章、发布文章"></a>写文章、发布文章</h2><p>打开hexo安装目录，我的是D:\Blog\source_posts ，可以发现里面有一个<code>hello-world.md</code>的文件，可以把自己写的md文件直接放进来</p>
 <p><img src="https://i.loli.net/2021/01/11/rgTiDvU6xfYMEqz.png" alt="image-20210111220734944"></p>

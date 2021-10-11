@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/05/14/uHTYnCVc3iSfgqy.png">
 <meta property="og:image" content="https://i.loli.net/2021/05/14/sm65SnlyqfLxdP1.png">
 <meta property="article:published_time" content="2021-05-14T05:25:53.000Z">
-<meta property="article:modified_time" content="2021-10-11T05:19:20.582Z">
+<meta property="article:modified_time" content="2021-10-11T05:32:24.285Z">
 <meta property="article:author" content="Liu">
 <meta property="article:tag" content="HTML5">
 <meta property="article:tag" content="前端">
@@ -218,7 +218,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-11 13:19:20" itemprop="dateModified" datetime="2021-10-11T13:19:20+08:00">2021-10-11</time>
+        <time title="修改时间：2021-10-11 13:32:24" itemprop="dateModified" datetime="2021-10-11T13:32:24+08:00">2021-10-11</time>
       </span>
 
   
@@ -241,6 +241,7 @@
     <span class="token property">height</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> aquamarine<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>​        可以看到此时的p元素大小为160px*160px</p>
 <p><img src="https://i.loli.net/2021/05/14/hWPOgrf3nHjlMaw.png" alt="image-20210514123306092"></p>
 <h3 id="三、rem单位的使用"><a href="#三、rem单位的使用" class="headerlink" title="三、rem单位的使用"></a>三、rem单位的使用</h3><p>​        在了解什么是em单位和相对单位后，就很好理解rem单位了，em是相对于当前元素字体大小的单位，而rem是相对于根元素的字体大小的单位，根元素也就是html元素。</p>
@@ -255,6 +256,7 @@
     <span class="token property">height</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> aquamarine<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="https://i.loli.net/2021/05/14/3inN1MWgHhDfAcT.png" alt="image-20210514123618613"></p>
 <h3 id="四、媒体查询"><a href="#四、媒体查询" class="headerlink" title="四、媒体查询"></a>四、媒体查询</h3><p>​        我们已经知道了rem是相对于根元素的字号来说的，那具体怎么适配不同屏幕大小呢？这个时候就要用到媒体查询了，rem一般和媒体查询搭配使用。</p>
 <p>​        媒体查询（Media Query）是CSS3的新语法，使用@media 查询，可以针对不同的媒体类型定义不同的样式，常用于针对不同的设备尺寸设置不同的样式。详细可以浏览mdn：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Media_Queries/Using_media_queries">使用媒体查询 - CSS（层叠样式表） | MDN (mozilla.org)</a></p>
@@ -284,6 +286,7 @@
     <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> aquamarine<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>​        此时浏览器页面宽度为861px，当设备宽度大于等于640px时，元素高度应该是50px * 10rem=500px  元素内字体应该是50p * 1rem=50px</p>
 <p><img src="https://i.loli.net/2021/05/14/uHTYnCVc3iSfgqy.png" alt="image-20210514133257112"></p>
 <p>​        此时浏览器页面宽度为1385px，当设备宽度大于等于1260px时，元素高度应该是100px * 10rem=1000px  元素内字体应该是100p * 1rem=100px </p>
