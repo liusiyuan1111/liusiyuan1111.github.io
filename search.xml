@@ -39,8 +39,6 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> 论文 </tag>
             
             <tag> 遥感图像 </tag>
@@ -48,6 +46,8 @@
             <tag> Transformer </tag>
             
             <tag> 图像分割 </tag>
+            
+            <tag> 深度学习 </tag>
             
             <tag> 计算机视觉 </tag>
             
@@ -93,11 +93,11 @@
       
         <tags>
             
+            <tag> 深度学习 </tag>
+            
             <tag> 论文翻译 </tag>
             
             <tag> 图像检索 </tag>
-            
-            <tag> 深度学习 </tag>
             
             <tag> Paper </tag>
             
@@ -139,7 +139,7 @@
       <link href="2021/01/17/05-%E4%BD%BF%E7%94%A8git%E5%A4%9A%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/"/>
       <url>2021/01/17/05-%E4%BD%BF%E7%94%A8git%E5%A4%9A%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/</url>
       
-        <content type="html"><![CDATA[<p>最近使用GitHub page+Hexo搭建了一个独立博客，有一个小问题，现在只能在自己这台电脑上写博客，换一台电脑就无法使用了，所以在网上找了一下教程，最后决定通过git分支来进行多终端工作，具体教程如下：</p><h2 id="机制"><a href="#机制" class="headerlink" title="机制"></a>机制</h2><p>首先需要明白的是，通过hexo d上传部署到GitHub的其实是hexo编译之后的文件，用来生成网页的，并不包含源文件</p><p><img src="https://i.loli.net/2021/01/17/XVlwK8WrsH3oCcE.png" alt="image-20210117172156337"></p><p>只有本地目录下自动生成的.deploy_git文件夹会被上传到GitHub，而其他的配置文件，主题文件和写在post的博客都是没有上传到GitHub的</p><p><img src="https://i.loli.net/2021/01/17/2NPHxu9wvnpr7IV.png" alt="image-20210117172503099"></p><p><img src="https://i.loli.net/2021/01/17/71RDuQgTSVapNjM.png" alt="image-20210117172324582"></p><p>知道了这个机制，我们就可以利用git的分支管理，把源文件上传到GitHub的另一个分支即可。</p><h2 id="上传分支"><a href="#上传分支" class="headerlink" title="上传分支"></a>上传分支</h2><ol><li>首先在仓库下新建一个hexo分支</li></ol><p><img src="https://i.loli.net/2021/01/17/n6hZ3zg4tY7QsIx.png" alt="image-20210117173409933"></p><ol start="2"><li>在setting里更改hexo为默认分支</li></ol><p><img src="https://i.loli.net/2021/01/17/lnQr34VD5iUYufw.png" alt="image-20210117173443554"></p><ol start="3"><li><p>在本地目录打开git bash，将仓库clone到本地，此时默认分支是hexo，所以clone时只clone了hexo。在本地目录打开clone下来的文件夹，把除了.git文件夹以外的所有文件全部删除。</p><p><img src="https://i.loli.net/2021/01/17/emEt35SnNvouF2X.png" alt="image-20210117174348551"></p></li><li><p>然后把博客源文件全部复制过来，除了.deploy_git。</p><p>注意1：复制过来的源文件应该有一个.gitignore，用来忽略一些不需要的文件，如果没有的话可以自己新建一个，写入以下的内容：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">.DS_StoreThumbs.dbdb.json*.lognode_modules&#x2F;public&#x2F;.deploy*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>注意2：theme主题文件夹中的.git文件夹也要删掉，所以需要显示隐藏文件，检查一下有没有，否则上传的时候会出错</p></li><li><p>提交commit，然后push，打开GitHub看一下是否已经正确上传，此时hexo分支下是这些源文件了。</p></li></ol><p><img src="https://i.loli.net/2021/01/17/ZopbY8mNtWkhRBP.png" alt="image-20210117175409885"></p><h2 id="更换电脑操作"><a href="#更换电脑操作" class="headerlink" title="更换电脑操作"></a>更换电脑操作</h2><p>此时和之前的环境搭建差不多</p><ol><li><p>在新的电脑上安装git，然后设置全局邮箱和用户名，设置ssh key，详细步骤见之前的博文</p><p><a href="https://liusiyuan.site/2021/01/11/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">GitHub+Hexo搭建个人博客 (liusiyuan.site)</a></p></li><li><p>安装node.js和hexo，但是注意，此时不用hexo init</p></li><li><p>直接在任意目录下git clone即可</p></li><li><p>进入到clone的文件夹中，执行</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">npm installnpm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>然后生成，部署</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">hexo ghexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>然后就可以写博客了</p><pre class="line-numbers language-none"><code class="language-none">hexo new newpage<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><ol start="7"><li>注意，最好每次写完可以同步上传到GitHub上</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>最近使用GitHub page+Hexo搭建了一个独立博客，有一个小问题，现在只能在自己这台电脑上写博客，换一台电脑就无法使用了，所以在网上找了一下教程，最后决定通过git分支来进行多终端工作，具体教程如下：</p><h2 id="机制"><a href="#机制" class="headerlink" title="机制"></a>机制</h2><p>首先需要明白的是，通过hexo d上传部署到GitHub的其实是hexo编译之后的文件，用来生成网页的，并不包含源文件</p><p><img src="https://i.loli.net/2021/01/17/XVlwK8WrsH3oCcE.png" alt="image-20210117172156337"></p><p>只有本地目录下自动生成的.deploy_git文件夹会被上传到GitHub，而其他的配置文件，主题文件和写在post的博客都是没有上传到GitHub的</p><p><img src="https://i.loli.net/2021/01/17/2NPHxu9wvnpr7IV.png" alt="image-20210117172503099"></p><p><img src="https://i.loli.net/2021/01/17/71RDuQgTSVapNjM.png" alt="image-20210117172324582"></p><p>知道了这个机制，我们就可以利用git的分支管理，把源文件上传到GitHub的另一个分支即可。</p><h2 id="上传分支"><a href="#上传分支" class="headerlink" title="上传分支"></a>上传分支</h2><ol><li>首先在仓库下新建一个hexo分支</li></ol><p><img src="https://i.loli.net/2021/01/17/n6hZ3zg4tY7QsIx.png" alt="image-20210117173409933"></p><ol start="2"><li>在setting里更改hexo为默认分支</li></ol><p><img src="https://i.loli.net/2021/01/17/lnQr34VD5iUYufw.png" alt="image-20210117173443554"></p><ol start="3"><li><p>在本地目录打开git bash，将仓库clone到本地，此时默认分支是hexo，所以clone时只clone了hexo。在本地目录打开clone下来的文件夹，把除了.git文件夹以外的所有文件全部删除。</p><p><img src="https://i.loli.net/2021/01/17/emEt35SnNvouF2X.png" alt="image-20210117174348551"></p></li><li><p>然后把博客源文件全部复制过来，除了.deploy_git。</p><p>注意1：复制过来的源文件应该有一个.gitignore，用来忽略一些不需要的文件，如果没有的话可以自己新建一个，写入以下的内容：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">.DS_StoreThumbs.dbdb.json*.lognode_modules/public/.deploy*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>注意2：theme主题文件夹中的.git文件夹也要删掉，所以需要显示隐藏文件，检查一下有没有，否则上传的时候会出错</p></li><li><p>提交commit，然后push，打开GitHub看一下是否已经正确上传，此时hexo分支下是这些源文件了。</p></li></ol><p><img src="https://i.loli.net/2021/01/17/ZopbY8mNtWkhRBP.png" alt="image-20210117175409885"></p><h2 id="更换电脑操作"><a href="#更换电脑操作" class="headerlink" title="更换电脑操作"></a>更换电脑操作</h2><p>此时和之前的环境搭建差不多</p><ol><li><p>在新的电脑上安装git，然后设置全局邮箱和用户名，设置ssh key，详细步骤见之前的博文</p><p><a href="https://liusiyuan.site/2021/01/11/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">GitHub+Hexo搭建个人博客 (liusiyuan.site)</a></p></li><li><p>安装node.js和hexo，但是注意，此时不用hexo init</p></li><li><p>直接在任意目录下git clone即可</p></li><li><p>进入到clone的文件夹中，执行</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">npm installnpm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>然后生成，部署</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">hexo ghexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>然后就可以写博客了</p><pre class="line-numbers language-none"><code class="language-none">hexo new newpage<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><ol start="7"><li>注意，最好每次写完可以同步上传到GitHub上</li></ol>]]></content>
       
       
       
@@ -147,9 +147,9 @@
             
             <tag> 搭建博客 </tag>
             
-            <tag> GitHub </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> GitHub </tag>
             
         </tags>
       
@@ -168,8 +168,6 @@
       
         <tags>
             
-            <tag> GitHub </tag>
-            
             <tag> HTML5 </tag>
             
             <tag> 融媒体 </tag>
@@ -177,6 +175,8 @@
             <tag> web </tag>
             
             <tag> 前端 </tag>
+            
+            <tag> GitHub </tag>
             
         </tags>
       
