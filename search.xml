@@ -39,6 +39,8 @@
       
         <tags>
             
+            <tag> 深度学习 </tag>
+            
             <tag> 论文 </tag>
             
             <tag> 遥感图像 </tag>
@@ -46,8 +48,6 @@
             <tag> Transformer </tag>
             
             <tag> 图像分割 </tag>
-            
-            <tag> 深度学习 </tag>
             
             <tag> 计算机视觉 </tag>
             
@@ -93,11 +93,11 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> 论文翻译 </tag>
             
             <tag> 图像检索 </tag>
+            
+            <tag> 深度学习 </tag>
             
             <tag> Paper </tag>
             
