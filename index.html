@@ -1,7 +1,271 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>刘思远的博客 - 没有一个冬天不可逾越，没有一个春天不会来临</title><meta name="author" content="Liu"><meta name="copyright" content="Liu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="人生苦短，我学Python">
+<meta property="og:type" content="website">
+<meta property="og:title" content="刘思远的博客">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="刘思远的博客">
+<meta property="og:description" content="人生苦短，我学Python">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Liu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '刘思远的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-10-11 12:13:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a></div></div></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">刘思远的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">刘思远的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/09/24/10-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%A4%84%E7%90%86%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="数据分析与处理开发环境搭建">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据分析与处理开发环境搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/24/10-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%A4%84%E7%90%86%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="数据分析与处理开发环境搭建">数据分析与处理开发环境搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-24T02:29:53.000Z" title="发表于 2021-09-24 10:29:53">2021-09-24</time></span></div><div class="content">Anaconda安装Anaconda是跨平台的python管理平台，win、mac、linux上通用，可以便捷获取包且对包能够进行管理，同时对环境可以统一管理的发行版本。Anaconda包含了conda、Python在内的超过180个科学包及其依赖项。
+可以在官网找到自己电脑对应的安装包Anaconda | 下载
+也可以在优慕课-课程资源里找到Anaconda3的安装包（适用于win64位系统）
+安装注意事项：
+1.安装路径不要有中文，由于占用空间会比较大，建议安装在其他盘
+
+2.把”Add Anaconda3 to my PATH environment variable”勾选上
+
+Anaconda配置1.运行安装完成之后打开Anaconda终端（macOS和Linux请打开Terminal终端进行操作）
+
+2.创建新环境conda create -n &lt;env_name> &lt;package_names>
+注意：
+&lt;env_name&gt;即创建的环境名，建议以英文命名，且不加空格，名称两边不加尖括号“&lt;&gt;”
+&lt;package_names&gt;即 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/05/23/09-Transformer%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87/" title="Transformer图像分割论文">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Transformer图像分割论文"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/05/23/09-Transformer%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87/" title="Transformer图像分割论文">Transformer图像分割论文</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-23T15:29:53.000Z" title="发表于 2021-05-23 23:29:53">2021-05-23</time></span></div><div class="content">Transformer图像分割论文这篇博客整理使用Transformer来做图像分割的论文，主要是医学图像方向，包括以下几篇文章：
+
+SETR：Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers
+BoTNet：Bottleneck Transformers for Visual Recognition
+TransFuse：TransFuse: Fusing Transformers and CNNs for Medical Image Segmentation
+Swin-Unet：Swin-Unet: Unet-like Pure Transformer for Medical Image Segmentation
+MedT：Medical Transformer: Gated Axial-Attention for Medical Image Segmentation
+SegTran：Medical Image Segmentation using Squ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/05/14/08-%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2+rem%E5%B8%83%E5%B1%80/" title="媒体查询+rem布局">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="媒体查询+rem布局"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/05/14/08-%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2+rem%E5%B8%83%E5%B1%80/" title="媒体查询+rem布局">媒体查询+rem布局</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-14T05:25:53.000Z" title="发表于 2021-05-14 13:25:53">2021-05-14</time></span></div><div class="content">媒体查询+rem布局一、rem单位是什么？​        rem（font size of the root element)是一个相对单位，指的是相对于根元素的字体大小的单位，常用于移动端布局，使用相对单位的优势在于可以自适应不同分辨率大小的屏幕。要了解rem单位，可以先理解em这个相对单位。
+二、em单位​        em单位是最常见的相对长度单位，基准值是当前元素的字号大小（如果当前元素没有设置字号，则继承父元素的字号大小），在css中，1em表示当前元素的字号大小，例如：p元素字号为16px，宽高使用em这个相对单位，则此时宽高应该相对于字号等于16px*10=160px
+
+p &#123;
+    /* 宽高设为10em，由于字号是16px，则此时宽高应为10*16px=160px */
+    font-size: 16px;
+    width: 10em;
+    height: 10em;
+    background-color: aquamarine;
+&#125;
+​        可以看到此时的p元素大小为160px*160px
+
+三、rem单位的使用​ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/02/05/07-%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9ADeep-Image-Retrieval-A-Survey/" title="论文翻译：Deep Image Retrieval  A Survey">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="论文翻译：Deep Image Retrieval  A Survey"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/02/05/07-%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9ADeep-Image-Retrieval-A-Survey/" title="论文翻译：Deep Image Retrieval  A Survey">论文翻译：Deep Image Retrieval  A Survey</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-02-05T11:53:38.000Z" title="发表于 2021-02-05 19:53:38">2021-02-05</time></span></div><div class="content">Deep Image Retrieval: A Survey深度图像检索综述
+Abstract—In recent years a vast amount of visual content has been generated and shared from various fields, such as social media platforms, medical images, and robotics. This abundance of content creation and sharing has introduced new challenges. In particular, searching databases for similar content, i.e., content based image retrieval (CBIR), is a long-established research area, and more efficient and accurate methods are needed for real time retrieval.  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/17/06-win10-Linux-manjaro-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" title="win10+Linux(manjaro)双系统安装">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="win10+Linux(manjaro)双系统安装"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/17/06-win10-Linux-manjaro-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" title="win10+Linux(manjaro)双系统安装">win10+Linux(manjaro)双系统安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-17T11:05:35.000Z" title="发表于 2021-01-17 19:05:35">2021-01-17</time></span></div><div class="content">一、前言Manjaro是一款基于Arch Linux的、用户友好的发行版，虽然Manjaro is not Arch，但它依然能够从AUR(Arch User Repository)中提取软件包，且有自己的独立库。
+它有且不仅有如下特性：
+
+Pre-installed （在你还没正式安装时，你便可从启动盘直接流畅体验它的桌面系统）
+快、强、高效
+滚动发布，无需定期更新系统版本
+……
+
+官方网站：https://manjaro.org/
+本教程仅适用于 单硬盘 UEFI+GPT格式启动方式
+二、准备工作1. 查看电脑的启动方式目前主流的两种启动系统的方式：legacy启动+MBR分区表
+UEFI启动+GPT分区表
+我们需要查看自己硬盘使用的哪种分区：
+文件资源管理器-&gt;（右键）此电脑-&gt;管理-&gt;磁盘管理
+
+可以看到只有一个磁盘0，所以是“单硬盘”
+右键选择一个磁盘-&gt;属性-&gt;卷在磁盘分区形式一栏中可以看到是GPT or MBR，我的是GPT分区
+
+2.下载manjaro镜像：在官网下载可能速度会比较慢，可以选择在清华大学开源软件镜像站下载
+
+
+我这里选择了2 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/17/05-%E4%BD%BF%E7%94%A8git%E5%A4%9A%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/" title="使用git多分支管理博客">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用git多分支管理博客"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/17/05-%E4%BD%BF%E7%94%A8git%E5%A4%9A%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/" title="使用git多分支管理博客">使用git多分支管理博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-17T10:25:38.000Z" title="发表于 2021-01-17 18:25:38">2021-01-17</time></span></div><div class="content">最近使用GitHub page+Hexo搭建了一个独立博客，有一个小问题，现在只能在自己这台电脑上写博客，换一台电脑就无法使用了，所以在网上找了一下教程，最后决定通过git分支来进行多终端工作，具体教程如下：
+机制首先需要明白的是，通过hexo d上传部署到GitHub的其实是hexo编译之后的文件，用来生成网页的，并不包含源文件
+
+只有本地目录下自动生成的.deploy_git文件夹会被上传到GitHub，而其他的配置文件，主题文件和写在post的博客都是没有上传到GitHub的
+
+
+知道了这个机制，我们就可以利用git的分支管理，把源文件上传到GitHub的另一个分支即可。
+上传分支
+首先在仓库下新建一个hexo分支
+
+
+
+在setting里更改hexo为默认分支
+
+
+
+在本地目录打开git bash，将仓库clone到本地，此时默认分支是hexo，所以clone时只clone了hexo。在本地目录打开clone下来的文件夹，把除了.git文件夹以外的所有文件全部删除。
+
+
+然后把博客源文件全部复制过来，除了.deploy_git。
+注意1：复制过来的源文件应该有一个.gitign ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/13/04-HTML5%E8%9E%8D%E5%AA%92%E4%BD%93%E5%88%B6%E4%BD%9C/" title="HTML5融媒体制作竞赛团队操作教程">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML5融媒体制作竞赛团队操作教程"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/13/04-HTML5%E8%9E%8D%E5%AA%92%E4%BD%93%E5%88%B6%E4%BD%9C/" title="HTML5融媒体制作竞赛团队操作教程">HTML5融媒体制作竞赛团队操作教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-13T06:20:19.000Z" title="发表于 2021-01-13 14:20:19">2021-01-13</time></span></div><div class="content">HTML5融媒体制作竞赛团队操作教程这是一个用于广东工贸职业技术学院的软件工程系参加HTML5融媒体内容制作职业技能大赛的教程资料，主要是关于如何使用GitHub管理项目，托管代码。
+团队仓库：liusiyuan1111/HTML5 (github.com)
+该仓库主要用于存放学习资料，和同学的项目代码。
+创建一个GitHub账号
+创建账号，此步骤省略
+
+下载一个GitHub桌面客户端，下载链接GitHub Desktop | Simple collaboration from your desktop
+
+
+clone仓库到本地
+fork到自己的仓库
+
+
+fork之后可以在自己的Repositories中看到这个仓库
+
+在GitHub桌面版登录自己的账号，然后选择Clone a repository from the Internet,把fork的HTML5仓库clone到本地
+
+clone时选择第一个To contribute to the parent project,这样就可以pull requests到团队的仓库
+
+
+clone之后可以在本地看到整个仓库的文件夹
+
+
+在学生项目 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/12/03-MySql%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" title="MySql安装与环境配置教程">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql安装与环境配置教程"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/12/03-MySql%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" title="MySql安装与环境配置教程">MySql安装与环境配置教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-12T08:15:40.000Z" title="发表于 2021-01-12 16:15:40">2021-01-12</time></span></div><div class="content">MySql安装与环境配置教程
+
+MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+这篇博文主要是安装与配置MySql的详细步骤。
+下载安装包MySql有免费的版本也有收费的版本，这里选择MySql的免费版本，也就是社区版下载，链接：MySQL :: Download MySQL Community Server (Archived Versions)
+点开后可以看到这个界面，Product Version选择版本，这里选择最新的8.0.21，操作系统选择windows，安装包选择第一个稳定版本。
+
+下载完成后，把安装包放到放在指定位置，并解压，注意路径中不要有中文
+
+MySql安装安装MySQL的服务以管理员身份打开命令行，因为我这里是放在D盘，所以先进入D盘
+
+然后进入mysql的bin目录
+
+然后执行安装MySQL的服务：
+mysqld --install
+出现Service successfully installed的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/11/02-GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="GitHub+Hexo搭建个人博客">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GitHub+Hexo搭建个人博客"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/11/02-GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="GitHub+Hexo搭建个人博客">GitHub+Hexo搭建个人博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-11T15:59:53.000Z" title="发表于 2021-01-11 23:59:53">2021-01-11</time></span></div><div class="content">GitHub+Hexo搭建个人博客
+
+Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+这里我把个人博客托管在 GitHub Pages 上。GitHub Pages 是一种静态站点托管服务，每个 GitHub 帐户或组织都可以有一个站点。
+Github Pages上创建博客GitHub创建仓库新建一个名为 用户名.github.io的仓库，比如我的GitHub用户名为liusiyuan1111 ，那么就新建一个 liusiyuan1111.github.io 的仓库，这样我的网站访问地址就是 https://liusiyuan1111.github.io 。
+创建成功后，打开网址，此时显示404
+
+Hexo安装安装Hexo前需要有Node.Js的环境，安装步骤省略
+Node.js 安装包及源码下载地址为：https://nodejs.org/en/download/
+有了nodejs的环境后，就可以安装hexo
+npm install -g hexo
+Hexo初始化在想要的路径下新建一个 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/11/01-hello-world/" title="Hello World">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/11/01-hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-11T15:29:53.000Z" title="发表于 2021-01-11 23:29:53">2021-01-11</time></span></div><div class="content">Hello World!
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Liu</div><div class="author-info__description">人生苦短，我学Python</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/09/24/10-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%A4%84%E7%90%86%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="数据分析与处理开发环境搭建"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据分析与处理开发环境搭建"/></a><div class="content"><a class="title" href="/2021/09/24/10-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%A4%84%E7%90%86%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="数据分析与处理开发环境搭建">数据分析与处理开发环境搭建</a><time datetime="2021-09-24T02:29:53.000Z" title="发表于 2021-09-24 10:29:53">2021-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/23/09-Transformer%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87/" title="Transformer图像分割论文"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Transformer图像分割论文"/></a><div class="content"><a class="title" href="/2021/05/23/09-Transformer%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E8%AE%BA%E6%96%87/" title="Transformer图像分割论文">Transformer图像分割论文</a><time datetime="2021-05-23T15:29:53.000Z" title="发表于 2021-05-23 23:29:53">2021-05-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/14/08-%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2+rem%E5%B8%83%E5%B1%80/" title="媒体查询+rem布局"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="媒体查询+rem布局"/></a><div class="content"><a class="title" href="/2021/05/14/08-%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2+rem%E5%B8%83%E5%B1%80/" title="媒体查询+rem布局">媒体查询+rem布局</a><time datetime="2021-05-14T05:25:53.000Z" title="发表于 2021-05-14 13:25:53">2021-05-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/05/07-%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9ADeep-Image-Retrieval-A-Survey/" title="论文翻译：Deep Image Retrieval  A Survey"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="论文翻译：Deep Image Retrieval  A Survey"/></a><div class="content"><a class="title" href="/2021/02/05/07-%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%9ADeep-Image-Retrieval-A-Survey/" title="论文翻译：Deep Image Retrieval  A Survey">论文翻译：Deep Image Retrieval  A Survey</a><time datetime="2021-02-05T11:53:38.000Z" title="发表于 2021-02-05 19:53:38">2021-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/17/06-win10-Linux-manjaro-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" title="win10+Linux(manjaro)双系统安装"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="win10+Linux(manjaro)双系统安装"/></a><div class="content"><a class="title" href="/2021/01/17/06-win10-Linux-manjaro-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" title="win10+Linux(manjaro)双系统安装">win10+Linux(manjaro)双系统安装</a><time datetime="2021-01-17T11:05:35.000Z" title="发表于 2021-01-17 19:05:35">2021-01-17</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Anaconda/" style="font-size: 1.1em; color: #999">Anaconda</a> <a href="/tags/CSS3/" style="font-size: 1.1em; color: #999">CSS3</a> <a href="/tags/CV/" style="font-size: 1.1em; color: #999">CV</a> <a href="/tags/GitHub/" style="font-size: 1.5em; color: #99a9bf">GitHub</a> <a href="/tags/HTML5/" style="font-size: 1.5em; color: #99a9bf">HTML5</a> <a href="/tags/Hexo/" style="font-size: 1.5em; color: #99a9bf">Hexo</a> <a href="/tags/Linux/" style="font-size: 1.1em; color: #999">Linux</a> <a href="/tags/MySql/" style="font-size: 1.1em; color: #999">MySql</a> <a href="/tags/Paper/" style="font-size: 1.1em; color: #999">Paper</a> <a href="/tags/Python/" style="font-size: 1.1em; color: #999">Python</a> <a href="/tags/Transformer/" style="font-size: 1.1em; color: #999">Transformer</a> <a href="/tags/manjaro/" style="font-size: 1.1em; color: #999">manjaro</a> <a href="/tags/web/" style="font-size: 1.1em; color: #999">web</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.5em; color: #99a9bf">前端</a> <a href="/tags/%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/" style="font-size: 1.1em; color: #999">图像分割</a> <a href="/tags/%E5%9B%BE%E5%83%8F%E6%A3%80%E7%B4%A2/" style="font-size: 1.1em; color: #999">图像检索</a> <a href="/tags/%E5%B8%83%E5%B1%80/" style="font-size: 1.1em; color: #999">布局</a> <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.5em; color: #99a9bf">搭建博客</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 1.1em; color: #999">数据分析</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 1.1em; color: #999">数据处理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.1em; color: #999">数据库</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.5em; color: #99a9bf">深度学习</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 1.5em; color: #99a9bf">环境配置</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 1.1em; color: #999">系统安装</a> <a href="/tags/%E8%9E%8D%E5%AA%92%E4%BD%93/" style="font-size: 1.1em; color: #999">融媒体</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" style="font-size: 1.1em; color: #999">计算机视觉</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 1.1em; color: #999">论文</a> <a href="/tags/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" style="font-size: 1.1em; color: #999">论文翻译</a> <a href="/tags/%E9%81%A5%E6%84%9F%E5%9B%BE%E5%83%8F/" style="font-size: 1.1em; color: #999">遥感图像</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">10</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-10-11T04:13:10.199Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Liu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
